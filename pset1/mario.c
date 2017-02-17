@@ -7,19 +7,20 @@ void prtBlock();
 
 // Declare Global Variables
 int height = 0; // Height of pyramid
-int width = 2; // Width of pyramid
+int width = 1; // Width of pyramid
 char symbol = '#'; // The block
 
 
 int main(void)
 {
-    while(height < 1 || height > 23) // Check if height is in range
+    do // Check if height is in range
     {
         printf("How high should we go? (1 - 23): ");
         height = get_int();
     }
+    while(height < 0 || height > 23);
     
-    int space = height - width + 1; // To align left side of pyaramid
+    int space = height - width; // To align left side of pyaramid
 
     for(int i = 0; i < height; i++)
     {
